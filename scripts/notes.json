@@ -1,0 +1,40 @@
+{
+  "notes": [
+    {
+      "chord": "C4",
+      "time": 0.5
+    },
+    {
+      "chord": "B4",
+      "time": 0.5
+    },
+    {
+      "chord": "F4",
+      "time": 0.5
+    },
+    {
+      "chord": "C4",
+      "time": 0.5
+    },
+    {
+      "chord": "B4",
+      "time": 0.5
+    },
+    {
+      "chord": "F4",
+      "time": 0.5
+    },
+    {
+      "chord": "C4",
+      "time": 0.5
+    },
+    {
+      "chord": "B4",
+      "time": 0.5
+    },
+    {
+      "chord": "F4",
+      "time": 0.5
+    }
+  ]
+}
