@@ -1,40 +1,17 @@
 {
+  "metronome": 4,
   "notes": [
     {
-      "chord": "C4",
-      "time": 0.5
-    },
-    {
-      "chord": "B4",
-      "time": 1
-    },
-    {
       "chord": "F4",
       "time": 0.5
     },
     {
-      "chord": "C4",
-      "time": 1
-    },
-    {
-      "chord": "B4",
+      "chord": "E4",
       "time": 0.5
     },
     {
-      "chord": "F4",
-      "time": 2
-    },
-    {
-      "chord": "C4",
-      "time": 1
-    },
-    {
-      "chord": "B4",
-      "time": 2
-    },
-    {
-      "chord": "F4",
-      "time": 3
+      "chord": "D4",
+      "time": 0.8
     }
   ]
 }
