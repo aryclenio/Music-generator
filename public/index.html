@@ -4,11 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
     <title>Music Generator</title>
 </head>
 
 <body>
-    <button>Play</button>
+    <div id="metronome">
+        <h2>Metronomo</h2>
+        <button type="button" id="playMetronome"><i class="fas fa-play"></i></button>
+        <button type="button" id="pauseMetronome"><i class="fas fa-pause"></i></button>
+        <p style="display:none" id="textMetronome">Tocando metronomo de <span id="countMetronome"></span> tempos</p>
+    </div>
+    <div id="scale"></div>
+    <div id="music">
+        <h2>Música</h2>
+        <button type="button" id="playMusic"><i class="fas fa-play"></i></button>
+        <button type="button" id="pauseMusic"><i class="fas fa-pause"></i></button>
+        <p style="display:none" id="textMusic">Tocando nota <span id="noteMusic"></span></p>
+    </div>
 </body>
 <script src="bundle.js"></script>
 

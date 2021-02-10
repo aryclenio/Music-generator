@@ -2,16 +2,28 @@
   "metronome": 4,
   "notes": [
     {
-      "chord": "F4",
-      "time": 0.5
+      "chord": "E2",
+      "time": 0.7
+    },
+    {
+      "chord": "A2",
+      "time": 0.7
+    },
+    {
+      "chord": "D3",
+      "time": 0.7
+    },
+    {
+      "chord": "G3",
+      "time": 0.7
+    },
+    {
+      "chord": "B3",
+      "time": 0.7
     },
     {
       "chord": "E4",
-      "time": 0.5
-    },
-    {
-      "chord": "D4",
-      "time": 0.8
+      "time": 0.7
     }
   ]
 }
