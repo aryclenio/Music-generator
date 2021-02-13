@@ -4,56 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Truculenta:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
         crossorigin="anonymous" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="./index.css" />
+
     <title>Music Generator</title>
 </head>
 
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">Music8 </span>
-            <span class="navbar-text">
+            <span class="navbar-brand mb-0 h1" style="letter-spacing: 15px; font-size: 25px;">Music8 </span>
+            <span class="navbar-text" style="letter-spacing: 10px;">
                 A DSL that generates music
             </span>
         </div>
     </nav>
     <div class="main-page container-fluid">
-        <div class="d-flex align-items-center justify-content-center">
-            <div class="card" id="metronome">
-                <div class="card-body">
-                    <h2 class="card-title">Metronomo</h2>
-                    <p style="display:none" id="textMetronome">Tocando metronomo de <span id="countMetronome"
-                            style="margin-left: 5px;"></span>
-                        &nbsp tempos
-                    </p>
-                    <div class="d-flex align-items-center justify-content-center">
-                        <button type="button" class="btn btn-light" id="playMetronome"><i
-                                class="fas fa-play"></i></button>
-                        <button type="button" class="btn btn-light" id="pauseMetronome"><i
-                                class="fas fa-pause"></i></button>
-                    </div>
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="col col-sm-12 col-md-6 d-flex align-items-center justify-content-center">
+                <div class="card" id="metronome">
+                    <div class="card-body">
+                        <h2 class="card-title">Metronomo</h2>
+                        <p style="display:none" id="textMetronome">Tocando metronomo de <span id="countMetronome"
+                                style="margin-left: 5px;"></span>
+                            &nbsp tempos
+                        </p>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <button type="button" class="btn btn-light" id="playMetronome"><i
+                                    class="fas fa-play"></i></button>
+                            <button type="button" class="btn btn-light" id="pauseMetronome"><i
+                                    class="fas fa-pause"></i></button>
+                        </div>
 
+                    </div>
                 </div>
             </div>
-            <div class="card" id="music">
-                <div class="card-body">
-                    <h2 class="card-title">Música</h2>
-                    <p style="display:none" id="textMusic">Tocando nota <span id="noteMusic"
-                            style="margin-left: 3px;"></span></p>
+            <div class="col col-sm-12 col-md-6 d-flex align-items-center justify-content-center">
 
-                    <div class="d-flex align-items-center justify-content-center">
+                <div class="card" id="music">
+                    <div class="card-body">
+                        <h2 class="card-title">Música</h2>
+                        <p style="display:none" id="textMusic">Tocando nota <span id="noteMusic"
+                                style="margin-left: 3px;"></span></p>
 
-                        <button type="button" class="btn btn-light" id="playMusic"><i class="fas fa-play"></i></button>
-                        <button type="button" class="btn btn-light" id="pauseMusic"><i
-                                class="fas fa-pause"></i></button>
+                        <div class="d-flex align-items-center justify-content-center">
+
+                            <button type="button" class="btn btn-light" id="playMusic"><i
+                                    class="fas fa-play"></i></button>
+                            <button type="button" class="btn btn-light" id="pauseMusic"><i
+                                    class="fas fa-pause"></i></button>
+                        </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
     </div>
