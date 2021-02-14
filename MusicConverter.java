@@ -26,7 +26,23 @@ public class MusicConverter {
 
         @Override
         public String visitInit(MusicParser.InitContext ctx){
-            String result = ""
+            String resultado = "{ \n";
+            resultado +=
+
+
+
+
+
+            try {
+                FileWriter myWriter = new FileWriter("temp/output.json");
+                myWriter.write(resultado);
+                myWriter.close();
+                return "Um arquivo JSON foi gerado com sucesso.";
+            } catch (IOException e) {
+                e.printStackTrace();
+                return "Erro ao gerar arquivo.";
+            }
+
         }
 
         @Override
@@ -36,9 +52,14 @@ public class MusicConverter {
 
         @Override
         public String visitNotes(MusicParser.NotesContext ctx){
-
+            return ctx.NOTE().getText() + " , " + ctx.TIME().getText();
         }
 
+        @Override
+        public String visitTime(MusicParser.NotesContext ctx){return ctx.TIME().getText();}
+
+        @Override
+        public String visitValue(MusicParser.NotesContext ctx){return ctx.VALUE().getText();}
     }
 
 }
