@@ -1,15 +1,13 @@
 grammar Music;
 
-prog: '{' met '}' EOF;
+init: 'begin' '<' NOME '>' prog 'end' EOF;
 
-met: '"metronome": ' VALUE "," notes;
+prog: 'metro' '=' VALUE notes+;
 
-notes: '"notes": ' '[' chord ']';
+notes: NOTE ',' TIME;
 
-chord: '{' '"chord": ' CHORDVALUE ',' time '}' ','| '{' '"chord": ' CHORDVALUE ',' time '} ;
-
-time: "time": ' TIMEVALUE;
-
-VALUE: [0-9]+;
-CHORDVALUE: [A-F][2-9];
-TIMEVALUE: '0' ('.' [0-9] +)?;
+NOME: [a-z]+;
+VALUE: : [0-9]+;
+NOTE: [A-F][2-9];
+TIME: '0' ('.' [0-9] +)?;
+SPACE: [ \n\t\r] -> skip;
