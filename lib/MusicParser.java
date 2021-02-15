@@ -1,4 +1,4 @@
-// Generated from Music.g4 by ANTLR 4.9.1
+// Generated from lib/Music.g4 by ANTLR 4.9.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -29,7 +29,7 @@ public class MusicParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'begin'", "'<'", "'>'", "'end'", "'metro'", "'='", "','"
+			null, "'begin'", "'<'", "'>'", "'end'", "'metro'", "'times'", "'play'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
@@ -199,7 +199,7 @@ public class MusicParser extends Parser {
 				setState(20); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( _la==NOTE );
+			} while ( _la==T__6 );
 			}
 		}
 		catch (RecognitionException re) {
@@ -243,9 +243,9 @@ public class MusicParser extends Parser {
 			setState(22);
 			match(T__4);
 			setState(23);
-			match(T__5);
-			setState(24);
 			match(VALUE);
+			setState(24);
+			match(T__5);
 			}
 		}
 		catch (RecognitionException re) {
@@ -288,9 +288,9 @@ public class MusicParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(26);
-			match(NOTE);
-			setState(27);
 			match(T__6);
+			setState(27);
+			match(NOTE);
 			setState(28);
 			match(TIME);
 			}
@@ -314,7 +314,7 @@ public class MusicParser extends Parser {
 		"\7\4\2\2\f\r\7\n\2\2\r\16\7\5\2\2\16\17\5\4\3\2\17\20\7\6\2\2\20\21\7"+
 		"\2\2\3\21\3\3\2\2\2\22\24\5\6\4\2\23\25\5\b\5\2\24\23\3\2\2\2\25\26\3"+
 		"\2\2\2\26\24\3\2\2\2\26\27\3\2\2\2\27\5\3\2\2\2\30\31\7\7\2\2\31\32\7"+
-		"\b\2\2\32\33\7\13\2\2\33\7\3\2\2\2\34\35\7\f\2\2\35\36\7\t\2\2\36\37\7"+
+		"\13\2\2\32\33\7\b\2\2\33\7\3\2\2\2\34\35\7\t\2\2\35\36\7\f\2\2\36\37\7"+
 		"\r\2\2\37\t\3\2\2\2\3\26";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());

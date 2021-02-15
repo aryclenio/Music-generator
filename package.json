@@ -13,10 +13,10 @@
   "scripts": {
     "start": "webpack serve",
     "build": "webpack -p",
-    "grammar": "antlr4 lib/Music.g4 -visitor",
-    "compile": "javac -d lib *.java",
+    "grammar": "antlr4 lib/Music.g4 -visitor -o lib",
+    "compile": "javac *.java",
     "test": "java ListConverter",
-    "grun": "grun List prog test/sum.list -tree -gui"
+    "grun": "grun lib/Music init lib/test/test.ms -tree -gui"
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",

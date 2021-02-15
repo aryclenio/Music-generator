@@ -1,4 +1,4 @@
-// Generated from Music.g4 by ANTLR 4.9.1
+// Generated from lib/Music.g4 by ANTLR 4.9.1
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
