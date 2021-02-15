@@ -12,7 +12,11 @@
   },
   "scripts": {
     "start": "webpack serve",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "grammar": "antlr4 lib/Music.g4 -visitor",
+    "compile": "javac -d lib *.java",
+    "test": "java ListConverter",
+    "grun": "grun List prog test/sum.list -tree -gui"
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",
