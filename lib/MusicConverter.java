@@ -13,7 +13,7 @@ public class MusicConverter {
             resultado += visit(ctx.prog()) + "\n}";
 
             try {
-                FileWriter myWriter = new FileWriter("../dist/output.json");
+                FileWriter myWriter = new FileWriter("../scripts/notes.json");
                 myWriter.write(resultado);
                 myWriter.close();
                 return "Um arquivo JSON foi gerado com sucesso.";
