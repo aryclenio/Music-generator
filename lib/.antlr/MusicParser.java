@@ -16,8 +16,8 @@ public class MusicParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, NOME=8, VALUE=9, 
-		NOTE=10, TIME=11, SPACE=12;
+		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, NOME=7, VALUE=8, NOTE=9, 
+		TIME=10, SPACE=11;
 	public static final int
 		RULE_init = 0, RULE_prog = 1, RULE_metro = 2, RULE_notes = 3;
 	private static String[] makeRuleNames() {
@@ -29,14 +29,14 @@ public class MusicParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'begin'", "'<'", "'>'", "'end'", "'metro'", "'times'", "'play'"
+			null, "'begin <'", "'>'", "'end'", "'metro'", "'times'", "'play'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, null, null, null, null, null, null, "NOME", "VALUE", "NOTE", 
-			"TIME", "SPACE"
+			null, null, null, null, null, null, null, "NOME", "VALUE", "NOTE", "TIME", 
+			"SPACE"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -111,16 +111,14 @@ public class MusicParser extends Parser {
 			setState(8);
 			match(T__0);
 			setState(9);
-			match(T__1);
-			setState(10);
 			match(NOME);
+			setState(10);
+			match(T__1);
 			setState(11);
-			match(T__2);
-			setState(12);
 			prog();
+			setState(12);
+			match(T__2);
 			setState(13);
-			match(T__3);
-			setState(14);
 			match(EOF);
 			}
 		}
@@ -158,22 +156,22 @@ public class MusicParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(16);
+			setState(15);
 			metro();
-			setState(18); 
+			setState(17); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(17);
+				setState(16);
 				notes();
 				}
 				}
-				setState(20); 
+				setState(19); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( _la==T__6 );
+			} while ( _la==T__5 );
 			}
 		}
 		catch (RecognitionException re) {
@@ -201,12 +199,12 @@ public class MusicParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
+			setState(21);
+			match(T__3);
 			setState(22);
-			match(T__4);
-			setState(23);
 			match(VALUE);
-			setState(24);
-			match(T__5);
+			setState(23);
+			match(T__4);
 			}
 		}
 		catch (RecognitionException re) {
@@ -235,11 +233,11 @@ public class MusicParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
+			setState(25);
+			match(T__5);
 			setState(26);
-			match(T__6);
-			setState(27);
 			match(NOTE);
-			setState(28);
+			setState(27);
 			match(TIME);
 			}
 		}
@@ -255,15 +253,15 @@ public class MusicParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\16!\4\2\t\2\4\3\t"+
-		"\3\4\4\t\4\4\5\t\5\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\3\3\3\6\3\25\n\3"+
-		"\r\3\16\3\26\3\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\2\2\6\2\4\6\b\2\2\2\35"+
-		"\2\n\3\2\2\2\4\22\3\2\2\2\6\30\3\2\2\2\b\34\3\2\2\2\n\13\7\3\2\2\13\f"+
-		"\7\4\2\2\f\r\7\n\2\2\r\16\7\5\2\2\16\17\5\4\3\2\17\20\7\6\2\2\20\21\7"+
-		"\2\2\3\21\3\3\2\2\2\22\24\5\6\4\2\23\25\5\b\5\2\24\23\3\2\2\2\25\26\3"+
-		"\2\2\2\26\24\3\2\2\2\26\27\3\2\2\2\27\5\3\2\2\2\30\31\7\7\2\2\31\32\7"+
-		"\13\2\2\32\33\7\b\2\2\33\7\3\2\2\2\34\35\7\t\2\2\35\36\7\f\2\2\36\37\7"+
-		"\r\2\2\37\t\3\2\2\2\3\26";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\r \4\2\t\2\4\3\t"+
+		"\3\4\4\t\4\4\5\t\5\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\3\3\3\6\3\24\n\3\r\3"+
+		"\16\3\25\3\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\2\2\6\2\4\6\b\2\2\2\34\2"+
+		"\n\3\2\2\2\4\21\3\2\2\2\6\27\3\2\2\2\b\33\3\2\2\2\n\13\7\3\2\2\13\f\7"+
+		"\t\2\2\f\r\7\4\2\2\r\16\5\4\3\2\16\17\7\5\2\2\17\20\7\2\2\3\20\3\3\2\2"+
+		"\2\21\23\5\6\4\2\22\24\5\b\5\2\23\22\3\2\2\2\24\25\3\2\2\2\25\23\3\2\2"+
+		"\2\25\26\3\2\2\2\26\5\3\2\2\2\27\30\7\6\2\2\30\31\7\n\2\2\31\32\7\7\2"+
+		"\2\32\7\3\2\2\2\33\34\7\b\2\2\34\35\7\13\2\2\35\36\7\f\2\2\36\t\3\2\2"+
+		"\2\3\25";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
