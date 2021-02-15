@@ -30,7 +30,7 @@ public class MusicConverter {
 
         @Override
         public String visitMetro(MusicParser.MetroContext ctx) {
-            return "\"metronome:\"" + visit(ctx.VALUE());
+            return "\"metronome:\"" + ctx.VALUE() + ", \n";
         }
 
         @Override
