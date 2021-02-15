@@ -19,10 +19,10 @@ public class MusicParser extends Parser {
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, NOME=8, VALUE=9, 
 		NOTE=10, TIME=11, SPACE=12;
 	public static final int
-		RULE_init = 0, RULE_prog = 1, RULE_notes = 2;
+		RULE_init = 0, RULE_prog = 1, RULE_metro = 2, RULE_notes = 3;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"init", "prog", "notes"
+			"init", "prog", "metro", "notes"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -121,19 +121,19 @@ public class MusicParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(6);
-			match(T__0);
-			setState(7);
-			match(T__1);
 			setState(8);
-			match(NOME);
+			match(T__0);
 			setState(9);
-			match(T__2);
+			match(T__1);
 			setState(10);
-			prog();
+			match(NOME);
 			setState(11);
-			match(T__3);
+			match(T__2);
 			setState(12);
+			prog();
+			setState(13);
+			match(T__3);
+			setState(14);
 			match(EOF);
 			}
 		}
@@ -149,7 +149,9 @@ public class MusicParser extends Parser {
 	}
 
 	public static class ProgContext extends ParserRuleContext {
-		public TerminalNode VALUE() { return getToken(MusicParser.VALUE, 0); }
+		public MetroContext metro() {
+			return getRuleContext(MetroContext.class,0);
+		}
 		public List<NotesContext> notes() {
 			return getRuleContexts(NotesContext.class);
 		}
@@ -182,12 +184,8 @@ public class MusicParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(14);
-			match(T__4);
-			setState(15);
-			match(T__5);
 			setState(16);
-			match(VALUE);
+			metro();
 			setState(18); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
@@ -202,6 +200,52 @@ public class MusicParser extends Parser {
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			} while ( _la==NOTE );
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class MetroContext extends ParserRuleContext {
+		public TerminalNode VALUE() { return getToken(MusicParser.VALUE, 0); }
+		public MetroContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_metro; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MusicListener ) ((MusicListener)listener).enterMetro(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MusicListener ) ((MusicListener)listener).exitMetro(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MusicVisitor ) return ((MusicVisitor<? extends T>)visitor).visitMetro(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final MetroContext metro() throws RecognitionException {
+		MetroContext _localctx = new MetroContext(_ctx, getState());
+		enterRule(_localctx, 4, RULE_metro);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(22);
+			match(T__4);
+			setState(23);
+			match(T__5);
+			setState(24);
+			match(VALUE);
 			}
 		}
 		catch (RecognitionException re) {
@@ -239,15 +283,15 @@ public class MusicParser extends Parser {
 
 	public final NotesContext notes() throws RecognitionException {
 		NotesContext _localctx = new NotesContext(_ctx, getState());
-		enterRule(_localctx, 4, RULE_notes);
+		enterRule(_localctx, 6, RULE_notes);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(22);
+			setState(26);
 			match(NOTE);
-			setState(23);
+			setState(27);
 			match(T__6);
-			setState(24);
+			setState(28);
 			match(TIME);
 			}
 		}
@@ -263,14 +307,15 @@ public class MusicParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\16\35\4\2\t\2\4\3"+
-		"\t\3\4\4\t\4\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\3\3\3\3\3\3\3\6\3\25\n"+
-		"\3\r\3\16\3\26\3\4\3\4\3\4\3\4\3\4\2\2\5\2\4\6\2\2\2\32\2\b\3\2\2\2\4"+
-		"\20\3\2\2\2\6\30\3\2\2\2\b\t\7\3\2\2\t\n\7\4\2\2\n\13\7\n\2\2\13\f\7\5"+
-		"\2\2\f\r\5\4\3\2\r\16\7\6\2\2\16\17\7\2\2\3\17\3\3\2\2\2\20\21\7\7\2\2"+
-		"\21\22\7\b\2\2\22\24\7\13\2\2\23\25\5\6\4\2\24\23\3\2\2\2\25\26\3\2\2"+
-		"\2\26\24\3\2\2\2\26\27\3\2\2\2\27\5\3\2\2\2\30\31\7\f\2\2\31\32\7\t\2"+
-		"\2\32\33\7\r\2\2\33\7\3\2\2\2\3\26";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\16!\4\2\t\2\4\3\t"+
+		"\3\4\4\t\4\4\5\t\5\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\3\3\3\6\3\25\n\3"+
+		"\r\3\16\3\26\3\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\2\2\6\2\4\6\b\2\2\2\35"+
+		"\2\n\3\2\2\2\4\22\3\2\2\2\6\30\3\2\2\2\b\34\3\2\2\2\n\13\7\3\2\2\13\f"+
+		"\7\4\2\2\f\r\7\n\2\2\r\16\7\5\2\2\16\17\5\4\3\2\17\20\7\6\2\2\20\21\7"+
+		"\2\2\3\21\3\3\2\2\2\22\24\5\6\4\2\23\25\5\b\5\2\24\23\3\2\2\2\25\26\3"+
+		"\2\2\2\26\24\3\2\2\2\26\27\3\2\2\2\27\5\3\2\2\2\30\31\7\7\2\2\31\32\7"+
+		"\b\2\2\32\33\7\13\2\2\33\7\3\2\2\2\34\35\7\f\2\2\35\36\7\t\2\2\36\37\7"+
+		"\r\2\2\37\t\3\2\2\2\3\26";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

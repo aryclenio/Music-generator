@@ -27,6 +27,16 @@ public interface MusicListener extends ParseTreeListener {
 	 */
 	void exitProg(MusicParser.ProgContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link MusicParser#metro}.
+	 * @param ctx the parse tree
+	 */
+	void enterMetro(MusicParser.MetroContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link MusicParser#metro}.
+	 * @param ctx the parse tree
+	 */
+	void exitMetro(MusicParser.MetroContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link MusicParser#notes}.
 	 * @param ctx the parse tree
 	 */

@@ -22,6 +22,12 @@ public interface MusicVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitProg(MusicParser.ProgContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link MusicParser#metro}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMetro(MusicParser.MetroContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link MusicParser#notes}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
