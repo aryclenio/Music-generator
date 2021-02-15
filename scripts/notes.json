@@ -1,6 +1,7 @@
 {
   "metronome": 4,
-  "notes": [
+  "notes":
+  [
     {
       "chord": "E2",
       "time": 0.7

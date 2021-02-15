@@ -25,7 +25,7 @@ public class MusicConverter {
 
         @Override
         public String visitProg(MusicParser.ProgContext ctx) {
-            return visit(ctx.metro()) + visit(ctx.notes(0));
+            return visit(ctx.metro()) + "\"notes\": [\n" + visit(ctx.notes(0)) + "]";
         }
 
         @Override
