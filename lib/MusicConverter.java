@@ -9,10 +9,11 @@ public class MusicConverter {
         @Override
         public String visitInit(MusicParser.InitContext ctx) {
 
-            String resultado = "{\n" + visit(ctx.prog()) + "\n}";
+            String resultado = "{ \n";
+            resultado += visit(ctx.prog()) + "\n}";
 
             try {
-                FileWriter myWriter = new FileWriter("temp/output.json");
+                FileWriter myWriter = new FileWriter("../dist/output.json");
                 myWriter.write(resultado);
                 myWriter.close();
                 return "Um arquivo JSON foi gerado com sucesso.";
@@ -25,7 +26,11 @@ public class MusicConverter {
 
         @Override
         public String visitProg(MusicParser.ProgContext ctx) {
-            return visit(ctx.metro()) + "\"notes\": [\n" + visit(ctx.notes(0)) + "]";
+            String n = "";
+            for (MusicParser.NotesContext notesCtx : ctx.notes()) {
+		  	    n += visit(notesCtx);
+		    }
+            return visit(ctx.metro()) + "\"notes\": [\n" + n + "]";
         }
 
         @Override
@@ -35,7 +40,7 @@ public class MusicConverter {
 
         @Override
         public String visitNotes(MusicParser.NotesContext ctx) {
-            return "{ \n" + "\"chord\": " + ctx.NOTE().getText() + ",\n" + "\"time\": " + ctx.TIME().getText() + "\n }";
+            return "{ \n" + "\"chord\": \"" + ctx.NOTE().getText() + "\",\n" + "\"time\": " + ctx.TIME().getText() + "\n },\n";
         }
     }
 
@@ -49,7 +54,7 @@ public class MusicConverter {
         MusicLexer lexer = new MusicLexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         MusicParser parser = new MusicParser(tokens);
-        ParseTree tree = parser.prog();
+        ParseTree tree = parser.init();
 
         Eval eval = new Eval();
 

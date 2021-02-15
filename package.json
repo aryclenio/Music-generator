@@ -14,8 +14,8 @@
     "start": "webpack serve",
     "build": "webpack -p",
     "grammar": "antlr4 lib/Music.g4 -visitor -o lib",
-    "compile": "javac *.java",
-    "test": "java ListConverter",
+    "compile": "javac lib/*.java -d lib",
+    "test": "java -cp ./lib; MusicConverter lib/test/test.ms",
     "grun": "grun lib/Music init lib/test/test.ms -tree -gui"
   },
   "devDependencies": {
