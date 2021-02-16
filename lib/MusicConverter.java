@@ -5,7 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class MusicConverter {
-    public static class Eval extends MusicBaseVisitor<String> {
+    public static class Eval extends MusicBaseVisitor < String > {
         @Override
         public String visitInit(MusicParser.InitContext ctx) {
 
@@ -27,20 +27,27 @@ public class MusicConverter {
         @Override
         public String visitProg(MusicParser.ProgContext ctx) {
             String n = "";
-            for (MusicParser.NotesContext notesCtx : ctx.notes()) {
-		  	    n += visit(notesCtx);
-		    }
-            return visit(ctx.metro()) + "\"notes\": [\n" + n + "]";
+            int len = 1;
+            int max = ctx.notes().size();
+            for (MusicParser.NotesContext notesCtx: ctx.notes()) {
+                if (len < max) {
+                    n += "\t{" + visit(notesCtx) + "},\n";
+                    len++;
+                } else {
+                    n += "\t{" + visit(notesCtx) + "}\n";
+                }
+            }
+            return visit(ctx.metro()) + "\t\"notes\": [\n" + n + "]";
         }
 
         @Override
         public String visitMetro(MusicParser.MetroContext ctx) {
-            return "\"metronome\":" + ctx.VALUE() + ", \n";
+            return "\t\"metronome\":" + ctx.VALUE() + ", \n";
         }
 
         @Override
         public String visitNotes(MusicParser.NotesContext ctx) {
-            return "{ \n" + "\"chord\": \"" + ctx.NOTE().getText() + "\",\n" + "\"time\": " + ctx.TIME().getText() + "\n },\n";
+            return "\"chord\": \"" + ctx.NOTE().getText() + "\", " + "\"time\": " + ctx.TIME().getText();
         }
     }
 
