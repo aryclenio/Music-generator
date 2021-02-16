@@ -5,7 +5,7 @@ Music generator is an Domain Specific Language created to transform music notes 
 # Necessary technologies
 
 - NodeJS > 12
-- Yarn
+- Yarn > 1.1
 - Java
 - Antlr4
 
