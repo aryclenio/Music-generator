@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./scripts/index.js",
+  entry: "./public/js/index.js",
 
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -24,6 +24,10 @@ module.exports = {
             presets: ["@babel/preset-env"],
           },
         },
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
       },
     ],
   },

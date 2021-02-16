@@ -1,6 +1,6 @@
 import "core-js/stable";
 import "regenerator-runtime/runtime";
-import file from "./notes.json";
+import file from "../out/notes.json";
 import { initSound } from "./sound";
 import { initMetronome } from "./metronome";
 

@@ -102,3 +102,11 @@ dist
 
 # TernJS port file
 .tern-port
+.idea
+
+lib/*.class
+lib/*.tokens
+lib/*.interp
+lib/*.java
+lib/.antlr
+lib/!MusicConverter.java
