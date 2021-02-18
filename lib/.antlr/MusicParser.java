@@ -16,26 +16,26 @@ public class MusicParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, NOME=8, VALUE=9, 
+		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, NAME=8, VALUE=9, 
 		NOTE=10, TIME=11, SPACE=12;
 	public static final int
-		RULE_init = 0, RULE_prog = 1, RULE_metro = 2, RULE_notes = 3;
+		RULE_init = 0, RULE_begin = 1, RULE_prog = 2, RULE_metro = 3, RULE_notes = 4;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"init", "prog", "metro", "notes"
+			"init", "begin", "prog", "metro", "notes"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'begin'", "'<'", "'>'", "'end'", "'metro'", "'times'", "'play'"
+			null, "'end'", "'begin'", "'<'", "'>'", "'metro'", "'times'", "'play'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, null, null, null, null, null, null, "NOME", "VALUE", "NOTE", 
+			null, null, null, null, null, null, null, null, "NAME", "VALUE", "NOTE", 
 			"TIME", "SPACE"
 		};
 	}
@@ -91,7 +91,9 @@ public class MusicParser extends Parser {
 	}
 
 	public static class InitContext extends ParserRuleContext {
-		public TerminalNode NOME() { return getToken(MusicParser.NOME, 0); }
+		public BeginContext begin() {
+			return getRuleContext(BeginContext.class,0);
+		}
 		public ProgContext prog() {
 			return getRuleContext(ProgContext.class,0);
 		}
@@ -108,20 +110,49 @@ public class MusicParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(8);
-			match(T__0);
-			setState(9);
-			match(T__1);
 			setState(10);
-			match(NOME);
+			begin();
 			setState(11);
-			match(T__2);
-			setState(12);
 			prog();
+			setState(12);
+			match(T__0);
 			setState(13);
-			match(T__3);
-			setState(14);
 			match(EOF);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class BeginContext extends ParserRuleContext {
+		public TerminalNode NAME() { return getToken(MusicParser.NAME, 0); }
+		public BeginContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_begin; }
+	}
+
+	public final BeginContext begin() throws RecognitionException {
+		BeginContext _localctx = new BeginContext(_ctx, getState());
+		enterRule(_localctx, 2, RULE_begin);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(15);
+			match(T__1);
+			setState(16);
+			match(T__2);
+			setState(17);
+			match(NAME);
+			setState(18);
+			match(T__3);
 			}
 		}
 		catch (RecognitionException re) {
@@ -153,24 +184,24 @@ public class MusicParser extends Parser {
 
 	public final ProgContext prog() throws RecognitionException {
 		ProgContext _localctx = new ProgContext(_ctx, getState());
-		enterRule(_localctx, 2, RULE_prog);
+		enterRule(_localctx, 4, RULE_prog);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(16);
+			setState(20);
 			metro();
-			setState(18); 
+			setState(22); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(17);
+				setState(21);
 				notes();
 				}
 				}
-				setState(20); 
+				setState(24); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			} while ( _la==T__6 );
@@ -197,15 +228,15 @@ public class MusicParser extends Parser {
 
 	public final MetroContext metro() throws RecognitionException {
 		MetroContext _localctx = new MetroContext(_ctx, getState());
-		enterRule(_localctx, 4, RULE_metro);
+		enterRule(_localctx, 6, RULE_metro);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(22);
+			setState(26);
 			match(T__4);
-			setState(23);
+			setState(27);
 			match(VALUE);
-			setState(24);
+			setState(28);
 			match(T__5);
 			}
 		}
@@ -231,15 +262,15 @@ public class MusicParser extends Parser {
 
 	public final NotesContext notes() throws RecognitionException {
 		NotesContext _localctx = new NotesContext(_ctx, getState());
-		enterRule(_localctx, 6, RULE_notes);
+		enterRule(_localctx, 8, RULE_notes);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(26);
+			setState(30);
 			match(T__6);
-			setState(27);
+			setState(31);
 			match(NOTE);
-			setState(28);
+			setState(32);
 			match(TIME);
 			}
 		}
@@ -255,15 +286,15 @@ public class MusicParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\16!\4\2\t\2\4\3\t"+
-		"\3\4\4\t\4\4\5\t\5\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\3\3\3\6\3\25\n\3"+
-		"\r\3\16\3\26\3\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\2\2\6\2\4\6\b\2\2\2\35"+
-		"\2\n\3\2\2\2\4\22\3\2\2\2\6\30\3\2\2\2\b\34\3\2\2\2\n\13\7\3\2\2\13\f"+
-		"\7\4\2\2\f\r\7\n\2\2\r\16\7\5\2\2\16\17\5\4\3\2\17\20\7\6\2\2\20\21\7"+
-		"\2\2\3\21\3\3\2\2\2\22\24\5\6\4\2\23\25\5\b\5\2\24\23\3\2\2\2\25\26\3"+
-		"\2\2\2\26\24\3\2\2\2\26\27\3\2\2\2\27\5\3\2\2\2\30\31\7\7\2\2\31\32\7"+
-		"\13\2\2\32\33\7\b\2\2\33\7\3\2\2\2\34\35\7\t\2\2\35\36\7\f\2\2\36\37\7"+
-		"\r\2\2\37\t\3\2\2\2\3\26";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\16%\4\2\t\2\4\3\t"+
+		"\3\4\4\t\4\4\5\t\5\4\6\t\6\3\2\3\2\3\2\3\2\3\2\3\3\3\3\3\3\3\3\3\3\3\4"+
+		"\3\4\6\4\31\n\4\r\4\16\4\32\3\5\3\5\3\5\3\5\3\6\3\6\3\6\3\6\3\6\2\2\7"+
+		"\2\4\6\b\n\2\2\2 \2\f\3\2\2\2\4\21\3\2\2\2\6\26\3\2\2\2\b\34\3\2\2\2\n"+
+		" \3\2\2\2\f\r\5\4\3\2\r\16\5\6\4\2\16\17\7\3\2\2\17\20\7\2\2\3\20\3\3"+
+		"\2\2\2\21\22\7\4\2\2\22\23\7\5\2\2\23\24\7\n\2\2\24\25\7\6\2\2\25\5\3"+
+		"\2\2\2\26\30\5\b\5\2\27\31\5\n\6\2\30\27\3\2\2\2\31\32\3\2\2\2\32\30\3"+
+		"\2\2\2\32\33\3\2\2\2\33\7\3\2\2\2\34\35\7\7\2\2\35\36\7\13\2\2\36\37\7"+
+		"\b\2\2\37\t\3\2\2\2 !\7\t\2\2!\"\7\f\2\2\"#\7\r\2\2#\13\3\2\2\2\3\32";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

@@ -11,7 +11,7 @@ const playSound = async (freq, time, chord) => {
     const decayRate = time;
 
     oscillator.frequency.value = freq;
-    oscillator.type = "sine";
+    oscillator.type = "square";
     envelope.gain.value = 1;
 
     oscillator.connect(envelope);

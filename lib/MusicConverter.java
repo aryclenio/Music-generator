@@ -10,6 +10,7 @@ public class MusicConverter {
         public String visitInit(MusicParser.InitContext ctx) {
 
             String resultado = "{ \n";
+            resultado += visit(ctx.begin());
             resultado += visit(ctx.prog()) + "\n}";
 
             try {
@@ -22,6 +23,11 @@ public class MusicConverter {
                 return "Erro ao gerar arquivo.";
             }
 
+        }
+
+        @Override
+        public String visitBegin(MusicParser.BeginContext ctx) {
+            return "\t\"name\": \"" + ctx.NAME() + "\", \n";
         }
 
         @Override

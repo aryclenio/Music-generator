@@ -1,9 +1,12 @@
-{
-  "metronome": 4,
-  "notes": [
-    { "chord": "E4", "time": 0.8 },
-    { "chord": "D4", "time": 0.8 },
-    { "chord": "G4", "time": 0.8 },
-    { "chord": "F4", "time": 0.8 }
-  ]
+{ 
+	"name": "mario", 
+	"metronome":4, 
+	"notes": [
+	{"chord": "E#4", "time": 0.8},
+	{"chord": "B3", "time": 0.8},
+	{"chord": "G3", "time": 0.8},
+	{"chord": "D3", "time": 0.8},
+	{"chord": "A2", "time": 0.8},
+	{"chord": "E2", "time": 0.8}
+]
 }
