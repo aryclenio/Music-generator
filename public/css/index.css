@@ -7,13 +7,17 @@ button {
   border-radius: 50px !important;
   margin: 10px 20px;
 }
+
+.row {
+  width: 100vw;
+}
 .card {
   background-color: #2d2d2d;
   color: #fafafa;
   border-radius: 10px !important;
   margin: 20px 30px;
   height: 185px;
-  width: 290px;
+  width: 50%;
   display: flex;
 }
 
@@ -26,7 +30,7 @@ button {
 
 .main-page {
   height: calc(100vh - 60px);
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
 }
