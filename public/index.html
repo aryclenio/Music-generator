@@ -26,16 +26,22 @@
         </div>
     </nav>
     <div class="main-page container-fluid">
-        <div class="row d-flex align-items-center justify-content-center">
+        <div class="row main-row d-flex align-items-center justify-content-center">
             <div class="card" id="music">
                 <div class="card-body">
-                    <h2 class="card-title">Música: <span id="music-name"></span></h2>
-                    <p style="display:none" id="textMusic">Tocando nota <span id="noteMusic"
-                            style="margin-left: 3px;"></span></p>
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <div class="col col-8">
 
-                    <div class="d-flex align-items-center justify-content-center">
+                            <h2 class="card-title">Música</h2>
+                            <h4 id="music-name"></h4>
+                            <h6 style="opacity:0" id="textMusic">Tocando nota <span id="noteMusic"
+                                    style="margin-left: 3px;"></span></h6>
+                        </div>
 
-                        <button type="button" class="btn btn-light" id="playMusic"><i class="fas fa-play"></i></button>
+                        <div class="col col-4 d-flex align-items-initial justify-content-center">
+                            <button type="button" class="btn btn-light" id="playMusic"><i
+                                    class="fas fa-play"></i></button>
+                        </div>
                     </div>
                 </div>
 
@@ -44,18 +50,21 @@
         <div class="row d-flex align-items-center justify-content-center">
             <div class="card" id="metronome">
                 <div class="card-body">
-                    <h2 class="card-title">Metronomo</h2>
-                    <p style="display:none" id="textMetronome">Tocando metronomo de <span id="countMetronome"
-                            style="margin-left: 5px;"></span>
-                        &nbsp tempos
-                    </p>
-                    <div class="d-flex align-items-center justify-content-center">
-                        <button type="button" class="btn btn-light" id="playMetronome"><i
-                                class="fas fa-play"></i></button>
-                        <button type="button" class="btn btn-light" id="pauseMetronome"><i
-                                class="fas fa-pause"></i></button>
-                    </div>
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <div class="col col-7">
 
+                            <h2 class="card-title">Metrônomo</h2>
+                            <h4>Metronomo de <span id="countMetronome"></span> tempos</h4>
+                            <h6 style="opacity:0" id="textMetronome">Metrônomo em execução</h6>
+                        </div>
+
+                        <div class="col col-5 d-flex align-items-initial justify-content-center">
+                            <button type="button" class="btn btn-light" id="playMetronome"><i
+                                    class="fas fa-play"></i></button>
+                            <button type="button" class="btn btn-light" id="pauseMetronome"><i
+                                    class="fas fa-pause"></i></button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

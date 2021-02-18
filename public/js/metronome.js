@@ -31,7 +31,6 @@ export const initMetronome = (time) => {
     .querySelector("#playMetronome")
     .addEventListener("click", async () => {
       document.querySelector("#textMetronome").style.display = "flex";
-      document.querySelector("#countMetronome").innerText = time;
 
       switch (time) {
         case 16:
