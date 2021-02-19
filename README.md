@@ -2,6 +2,8 @@
 
 Music generator is an Domain Specific Language created to transform music notes into an web page that plays music on the web.
 [Presentation on Google Slides](https://docs.google.com/presentation/d/1FSa63DYFZa4RZcPhSkI2GpE92l42VZYLojmlQgFjtdY/edit?usp=sharing)
+![image](https://user-images.githubusercontent.com/31252524/108441796-a9f1e400-7234-11eb-9265-910d66e29d6a.png)
+
 
 # Necessary technologies
 
