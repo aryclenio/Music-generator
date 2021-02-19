@@ -9,7 +9,7 @@ const playMetronome = async (time) => {
       const envelope = context.createGain();
 
       oscillator.frequency.value = 440;
-      oscillator.type = "sine";
+      oscillator.type = "square";
       envelope.gain.value = 0.4;
 
       oscillator.connect(envelope);
@@ -30,8 +30,6 @@ export const initMetronome = (time) => {
   document
     .querySelector("#playMetronome")
     .addEventListener("click", async () => {
-      document.querySelector("#textMetronome").style.display = "flex";
-
       switch (time) {
         case 16:
           playMetronome(250);
@@ -46,6 +44,5 @@ export const initMetronome = (time) => {
     .querySelector("#pauseMetronome")
     .addEventListener("click", async () => {
       stopMetronome();
-      document.querySelector("#textMetronome").style.display = "none";
     });
 };

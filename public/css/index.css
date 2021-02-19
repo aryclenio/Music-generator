@@ -1,24 +1,40 @@
 * {
-  font-family: "Truculenta", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  overflow: hidden;
+}
+.navbar {
+  background-color: #d40c7a !important;
 }
 button {
-  width: 50px;
-  height: 50px;
-  border-radius: 50px !important;
+  border-radius: 25px !important;
   margin: 10px 20px;
+  background-color: #d40c7a !important;
+  color: #fafafa !important;
+  padding: 10px;
+  font-weight: 600 !important;
+  border: 0 !important;
 }
 
 .main-row {
   width: 100vw;
 }
 .card {
-  background-color: #2d2d2d;
-  color: #fafafa;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #2d2d2d;
   border-radius: 10px !important;
-  height: 150px;
-  padding: 0;
-  width: 50%;
+  height: auto;
+  padding: 15px 0;
   display: flex;
+  width: 60%;
+}
+
+.inner-card {
+  width: 100%;
+  background-color: transparent;
+  border: 2px solid #fafafa;
+  padding: 10px;
+  height: 180px;
+  color: #fff;
 }
 
 .card-body {
@@ -38,4 +54,10 @@ button {
   display: grid;
   align-items: center;
   justify-content: center;
+  background-image: url("./back.jpg");
+  background-size: cover;
+}
+
+.row {
+  margin-left: 0 !important;
 }

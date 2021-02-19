@@ -2,7 +2,6 @@ import { Note } from "octavian";
 
 const playSound = async (freq, time, chord) => {
   await new Promise((res, rej) => {
-    document.querySelector("#textMusic").style.display = "flex";
     document.querySelector("#noteMusic").innerText = chord;
 
     const context = new AudioContext();
@@ -19,7 +18,7 @@ const playSound = async (freq, time, chord) => {
 
     oscillator.start(context.currentTime);
     envelope.gain.exponentialRampToValueAtTime(
-      0.00001,
+      0.001,
       context.currentTime + decayRate
     );
     setTimeout(
@@ -37,7 +36,6 @@ export const initSound = (notes) => {
     });
     for (const note of mapNotes) {
       await playSound(note.frequency, note.time, note.chord);
-      document.querySelector("#textMusic").style.display = "none";
     }
   });
 };
